@@ -32,14 +32,18 @@ class ZipRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		$long = $zip->getLongitude();
 		$query = $this->createQuery();
 		
-		$sql = "SELECT postal_code, admin_name1, place_name, latitude, longitude, " .
+		//$sql = "SELECT postal_code, admin_name1, place_name, latitude, longitude, " .
+		$sql = "SELECT *, " .
 			"6371 * acos( cos( radians(t.latitude) ) * cos( radians( " . $lat . " ) ) * cos( radians( $long ) - radians(t.longitude) ) + sin( radians(t.latitude) )  * sin( radians( $lat ) ) ) as distance " . 
 			"FROM `tx_oolzip_domain_model_zip` as t " .
 			" WHERE uid <> " . $zip->getUid();
 		
+		//$having = " HAVING distance > " $dist;
+		$order = " ORDER BY distance ASC ";
+		 
 		// TODO : hidden, deleted etc...
 		
-		$query->statement($sql);
+		$query->statement($sql . $order);
 		return $query->execute(TRUE);
 	}
 	
