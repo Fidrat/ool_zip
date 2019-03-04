@@ -1,0 +1,100 @@
+/**
+GLOBALS
+**/
+
+body{
+   
+}
+
+/** 
+HELPERS
+**/
+.tx-ool-zip .away{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+table.no-max-height{ /* mini css met un max height de 400px aux tables */
+    max-height: 100%;
+}
+
+
+/* Global list table */
+.tx-ool-zip table.zip-list{
+    
+}
+
+/* font sizes in table */
+.tx-ool-zip table.zip-list td{
+    font-size: 0.8rem;
+}
+.tx-ool-zip table.zip-list th div{
+    font-size: 0.8rem;
+}
+
+
+/** 
+COMPARE 
+**/
+.tx-ool-zip .control [name="tx_oolzip_zip[zipText]"]{
+   /* width: 3em; */
+}
+
+.tx-ool-zip .control [name="tx_oolzip_zip[distanceMax]"]{
+    /* width: 5em; */
+}
+
+
+/***
+Main menu
+https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think/
+***/
+.menu-outer {
+    height: 84px;
+    /* background: url(images/bar-bg.jpg) repeat-x; */
+}
+
+.display-table {
+    /*display: table;   *//*Allow the centering to work */
+    display: inline;  
+    margin: 0 auto;
+}
+
+ul.horizontal-list {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+}
+ul.horizontal-list li {
+    display: inline;
+}
+ul.horizontal-list li:hover a {
+    /*background-color: orange;*/
+}
+
+/******
+TABLESORTER asc/desc icons
+******/
+.tablesorter-header.tablesorter-headerAsc .tablesorter-header-inner:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f062";
+    padding: 0rem 1rem;
+}
+
+.tablesorter-header.tablesorter-headerDesc .tablesorter-header-inner:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f063";
+    padding: 0rem 1rem;
+}
+
+
+
+/*********
+Leaflet
+********/
+
+#map-canvas{
+     min-height: 280px; 
+     height: 100%; 
+}

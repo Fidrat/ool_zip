@@ -1,0 +1,130 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+
+    <f:section name="content">
+        <f:render partial="Zip/Navigation" arguments="" />
+        
+        <h2>Édition d'un Zip (work in progress incomming)</h2>
+
+        <f:form action="update" name="zip" object="{zip}">
+
+
+            <table class="tx_oolzip sortable tablesorter no-max-height">
+                <thead></thead>
+                <tbody></tbody>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.country_code" />
+                </td>
+                <td>
+                    {zip.countryCode}
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.postal_code" />
+                </td>
+                <td>
+                    {zip.postalCode}
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.place_name" />
+                </td>
+                <td>
+                    <f:form.textfield property="placeName">
+                        {zip.placeName}
+                    </f:form.textfield>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.admin_name1" />
+                </td>
+                <td>
+                    {zip.adminName1}
+                </td>
+                </tr>
+
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.admin_code1" />
+                </td>
+                <td>
+                    {zip.adminCode1}
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.admin_name2" />
+                </td>
+                <td>
+                    {zip.adminName2}
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.admin_code2" />
+                </td>
+                <td>
+                    {zip.adminCode2}
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.admin_name3" />
+                </td>
+                <td>
+                    {zip.adminName3}
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.admin_code3" />
+                </td>
+                <td>
+                    {zip.adminCode3}
+                </td>
+                </tr>
+
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.latitude" />
+                </td>
+                <td>
+                    <f:form.textfield property="latitude">
+                        {zip.latitude}
+                    </f:form.textfield>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.longitude" />
+                </td>
+                <td>
+                    <f:form.textfield property="longitude">
+                        {zip.longitude}
+                    </f:form.textfield>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <f:translate key="tx_oolzip_domain_model_zip.accuracy" />
+                <p>( 0=>"Unknown", 1=>"Estimated", 2=>"25%", 3=>"50%", 4=>"75%", 5=>"90%", 6=>"Centered (100%)" )</p>
+                </td>
+                <td>
+                    <f:form.textfield property="accuracy">
+                        {zip.accuracy}
+                    </f:form.textfield>
+                </td>
+                </tr>
+            </table>
+            
+            
+            <f:form.submit value="Save" />  
+            
+        </f:form>  
+
+    </f:section>
+</html>

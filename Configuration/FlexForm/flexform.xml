@@ -1,0 +1,35 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>patate</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>Select function</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">List</numIndex>
+                                        <numIndex index="1">Zip->list;Zip->show;Zip->compare</numIndex>
+                                    </numIndex>
+
+                                    <numIndex index="1">
+                                        <numIndex index="0">Compare</numIndex>
+                                        <numIndex index="1">Zip->compare;Zip->show;Zip->list</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

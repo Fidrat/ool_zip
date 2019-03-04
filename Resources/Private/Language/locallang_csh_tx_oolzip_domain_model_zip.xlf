@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-21T20:06:55Z" product-name="ool_zip">
+		<header/>
+		<body>
+			<trans-unit id="country_code.description">
+				<source>countryCode</source>
+			</trans-unit>
+			<trans-unit id="postal_code.description">
+				<source>postalCode</source>
+			</trans-unit>
+			<trans-unit id="place_name.description">
+				<source>placeName</source>
+			</trans-unit>
+			<trans-unit id="admin_name1.description">
+				<source>adminName1</source>
+			</trans-unit>
+			<trans-unit id="admin_code1.description">
+				<source>adminCode1</source>
+			</trans-unit>
+			<trans-unit id="admin_name2.description">
+				<source>adminName2</source>
+			</trans-unit>
+			<trans-unit id="admin_code2.description">
+				<source>adminCode2</source>
+			</trans-unit>
+			<trans-unit id="admin_name3.description">
+				<source>adminName3</source>
+			</trans-unit>
+			<trans-unit id="admin_code3.description">
+				<source>adminCode3</source>
+			</trans-unit>
+			<trans-unit id="latitude.description">
+				<source>latitude</source>
+			</trans-unit>
+			<trans-unit id="longitude.description">
+				<source>longitude</source>
+			</trans-unit>
+			<trans-unit id="accuracy.description">
+				<source>accuracy</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

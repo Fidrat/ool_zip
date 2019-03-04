@@ -1,0 +1,95 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	<f:section name="content">
+		<f:flashMessages />
+                
+                <f:comment>
+                    <f:render partial="Zip/Navigation" arguments="" />
+                </f:comment>
+                
+                <f:form action="compare">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <fieldset class="control">
+                            
+                                <div class="form-group">
+                                    <label>ZIP : 
+                                        <f:form.textfield name="zipText" class="form-control" value="{zipText}" maxlength="3"> </f:form.textfield>
+                                    </label>  
+                                
+                                
+                                    <label>Rayon en km : 
+                                        <f:form.textfield name="distanceMax" class="form-control" value="{distanceMax}" maxlength="4"> </f:form.textfield>
+                                    </label>                                
+                                
+                                    <f:form.submit class="btn btn-primary" value="Go" />    
+                                </div>
+                                
+                            </fieldset>    
+                        </div>
+                    </div>
+                </f:form>
+                
+                
+                <f:if condition="{zip}">
+                    <f:then>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <f:render partial="Zip/Card" arguments="{zip:zip}" />
+                            </div>
+                            <div class="col-sm-6 col-md-8">
+                                <div id="map-canvas"></div>
+                                <!-- CONTROL -->
+                                <f:form.hidden class="activeLat" value="{zip.latitude}" />
+                                <f:form.hidden class="activeLong" value="{zip.longitude}" />
+                                <f:form.hidden class="activeDist" value="{distanceMax}" />
+                            </div>
+                        </div>
+                    </f:then>
+                </f:if>
+                
+                
+                
+                <f:if condition="{cpCommaList}">
+                    <div class="row">
+                        <div>
+                            <button class="btn primary" data-clipboard-target="#cpCommaList">Copier la liste</button>
+                            <button class="toggler secondary" data-target="#cpCommaList">Voir/masquer la liste</button>
+                        </div>
+                        <div>
+                            <p class="copy-container away" id="cpCommaList">{cpCommaList}</p>
+                        </div>
+                    </div>
+                </f:if>
+                
+                <div class="row">
+                    <div>
+                        <table class="sortable tablesorter no-max-height" data-sortBy="3" data-sortDesc="0">
+                            <thead>
+                                <tr> <th></th> <th>Postal Code</th> <th>Place Name</th> <th>Km to {zip.postalCode}</th> </tr>
+                            </thead>
+                            <tbody>
+                                <f:for each="{closeZips}" as="z">
+
+                                    <tr class="zip-item" data-latitude="{z.latitude}" data-longitude="{z.longitude}">
+                                        <td>
+                                            <f:link.action action="show" arguments="{zip : z}">
+                                                <i class="fas fa-eye"></i>
+                                            </f:link.action>
+                                        </td>
+                                        <td>{z.postal_code}</td>
+                                        <td>{z.place_name}</td>
+                                        <td>
+                                            <f:format.number decimals="2" decimalSeparator="." thousandsSeparator="','">
+                                                {z.distance}
+                                            </f:format.number>
+                                        </td>
+                                    </tr>
+                                </f:for>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+	</f:section>
+</html>

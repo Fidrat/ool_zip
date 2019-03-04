@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-21T20:06:55Z" product-name="ool_zip">
+		<header/>
+		<body>
+			<trans-unit id="tx_oolzip_domain_model_zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.country_code">
+				<source>Country Code</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.postal_code">
+				<source>Postal Code</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.place_name">
+				<source>Place Name</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.admin_name1">
+				<source>Admin Name1</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.admin_code1">
+				<source>Admin Code1</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.admin_name2">
+				<source>Admin Name2</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.admin_code2">
+				<source>Admin Code2</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.admin_name3">
+				<source>Admin Name3</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.admin_code3">
+				<source>Admin Code3</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_oolzip_domain_model_zip.accuracy">
+				<source>Accuracy</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

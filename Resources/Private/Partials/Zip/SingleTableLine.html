@@ -1,0 +1,32 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <table class="tablesorter-dark">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Postal Code</th>
+                <th>Place Name</th>
+                <th>Province</th>
+                <th>Country</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Accuracy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <f:link.action action="show" arguments="{zip : zip}">
+                        <i class="fas fa-eye fa-2x"></i>
+                    </f:link.action>
+                </td>
+                <td>{zip.postalCode}</td>
+                <td>{zip.placeName}</td>
+                <td>{zip.adminName1}</td>
+                <td>{zip.countryCode}</td>
+                <td>{zip.latitude}</td>
+                <td>{zip.longitude}</td>
+                <td>{zip.accuracy}</td>
+            </tr>
+        </tbody>
+    </table>
+</html>
