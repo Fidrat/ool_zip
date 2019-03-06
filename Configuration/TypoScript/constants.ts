@@ -17,4 +17,8 @@ plugin.tx_oolzip_zip {
         css = EXT:ool_zip/Resources/Public/Css/
         js = EXT:ool_zip/Resources/Public/Js/
     }
+
+    # temp : map with be setting
+    # wsUid = 9 
+    wsUid = 13
 }

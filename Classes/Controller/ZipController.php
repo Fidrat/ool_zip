@@ -119,6 +119,59 @@ class ZipController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	
 	
 	/**
+     * action webServiceAction
+     *
+     */
+    public function webServiceAction()
+    {
+		//die( "ws dev" );
+		
+		$allparams = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET();
+		$err = [];
+		$args = [];
+		
+		if( !array_key_exists('z', $allparams) ){
+			$err[] = "Pas de paramètre z";
+		}else{
+			$args['z'] = $allparams['z'];
+		}
+		
+		if( !array_key_exists('d', $allparams) ){
+			$err[] = "Pas de paramètre d";
+		}else{
+			$args['d'] = (int)$allparams['d'];
+		}
+		
+		if(count($err)){
+			print_r($err);
+			die;
+		}
+		
+		$zip = $this->zipRepository->findOneByPostalCode( strtoupper($args['z']) );
+		
+		//D::debug($zip);
+		if( is_null( $zip ) ){
+			print "pas de match avec '" . $args['z'] . "' dans la bd - sorry";
+			die; // todo manage error msg
+		}
+		
+		// All good, let's do the job
+		$closeZips = array();
+		$cpCommaList = array();
+		
+		$zips = $this->zipRepository->findDistancesFrom( $zip );
+					
+		foreach( $zips as $z ){		
+			if( $z['distance'] < $args['d'] ){
+				$closeZips[] = $z;
+				$cpCommaList[] = strtolower( $z['postal_code'] );
+			}
+		}
+					
+		$this->view->assign('cpCommaList', implode(",", $cpCommaList) );
+    }
+	
+	/**
      * action ajaxAction
      *
      */

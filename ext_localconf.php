@@ -4,16 +4,31 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function()
     {
+	
+	$vendor = "OolongMedia";
+	$extName = "OolZip";
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'OolongMedia.OolZip',
+            $vendor . '.' . $extName,
             'Zip',
             [
-                'Zip' => 'compare, list, show, edit, update'
+                'Zip' => 'compare, list, show, edit, update, webService'
             ],
             // non-cacheable actions
             [
-                'Zip' => 'compare, list, show, edit'
+                'Zip' => 'compare, list, show, edit, webService'
+            ]
+        );
+
+		\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            $vendor . '.' . $extName,
+            'WsZip',
+            [
+                'Zip' => 'webService'
+            ],
+            // non-cacheable actions
+            [
+                'Zip' => 'webService'
             ]
         );
 
@@ -41,7 +56,7 @@ call_user_func(
 		$iconRegistry->registerIcon(
 			'ool_zip-plugin-zip',
 			\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-			['source' => 'EXT:ool_zip/Resources/Public/Icons/zip.svg']
+			['source' => 'EXT:FILE:ool_zip/Resources/Public/Icons/zip.svg']
 		);
 		
     }

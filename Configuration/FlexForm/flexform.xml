@@ -17,12 +17,17 @@
                                 <items>
                                     <numIndex index="0">
                                         <numIndex index="0">List</numIndex>
-                                        <numIndex index="1">Zip->list;Zip->show;Zip->compare</numIndex>
+                                        <numIndex index="1">Zip->list;Zip->show;Zip->compare;</numIndex>
                                     </numIndex>
 
                                     <numIndex index="1">
                                         <numIndex index="0">Compare</numIndex>
-                                        <numIndex index="1">Zip->compare;Zip->show;Zip->list</numIndex>
+                                        <numIndex index="1">Zip->compare;Zip->show;Zip->list;</numIndex>
+                                    </numIndex>
+                                    
+                                    <numIndex index="2">
+                                        <numIndex index="0">WebService</numIndex>
+                                        <numIndex index="1">Zip->webService;</numIndex>
                                     </numIndex>
                                 </items>
                             </config>

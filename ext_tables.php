@@ -18,6 +18,7 @@ call_user_func(
             $pluginName = 'Zip',
             'Zip management'
         );
+
      
         ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript', 'Zip code');
 
@@ -36,6 +37,12 @@ call_user_func(
 		);
 		/******/
 		
+		
+		ExtensionUtility::registerPlugin(
+            $extensionName, //'OolongMedia.OolZip',
+            'WsZip',
+            'WS - GET zip by zip and dist'
+        );
 		
     }
 );
