@@ -15,6 +15,8 @@ namespace OolongMedia\OolZip\Controller;
 use TYPO3\CMS\Core\Utility\DebugUtility as D;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use SvenJuergens\T3Slack\Service\T3Slack;
+
 /**
  * ZipController
  */
@@ -167,7 +169,10 @@ class ZipController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				$cpCommaList[] = strtolower( $z['postal_code'] );
 			}
 		}
-					
+		
+		$client = GeneralUtility::makeInstance(T3Slack::class);
+		$client->send($cpCommaList);			
+		
 		$this->view->assign('cpCommaList', implode(",", $cpCommaList) );
     }
 	
