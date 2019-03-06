@@ -171,7 +171,7 @@ class ZipController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		}
 		
 		$client = GeneralUtility::makeInstance(T3Slack::class);
-		$client->send($cpCommaList);			
+		$client->send( implode(",", $cpCommaList) );			
 		
 		$this->view->assign('cpCommaList', implode(",", $cpCommaList) );
     }
