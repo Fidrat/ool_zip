@@ -26,10 +26,13 @@ class ZipController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * zipRepository
      *
      * @var \OolongMedia\OolZip\Domain\Repository\ZipRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $zipRepository = null;
 
+	
+	
+	
     /**
      * action list
      *

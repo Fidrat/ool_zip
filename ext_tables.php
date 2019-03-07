@@ -9,6 +9,7 @@ call_user_func(
     function()
     {
 		/***/
+		$vendor = "OolongMedia";
 		$extensionKey = "ool_zip";
 		$extensionName = GeneralUtility::underscoredToUpperCamelCase($extensionKey);
 		/***/
