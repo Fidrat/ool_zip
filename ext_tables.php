@@ -15,7 +15,7 @@ call_user_func(
 		/***/
 	
         ExtensionUtility::registerPlugin(
-            $extensionName, //'OolongMedia.OolZip',
+            $vendor . '.' . $extensionName, //'OolongMedia.OolZip',
             $pluginName = 'Zip',
             'Zip management'
         );
@@ -40,7 +40,7 @@ call_user_func(
 		
 		
 		ExtensionUtility::registerPlugin(
-            $extensionName, //'OolongMedia.OolZip',
+            $vendor . '.' . $extensionName, //'OolongMedia.OolZip',
             'WsZip',
             'WS - GET zip by zip and dist'
         );

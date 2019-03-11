@@ -20,5 +20,5 @@ plugin.tx_oolzip_zip {
 
     # temp : map with be setting
     # wsUid = 9 
-    wsUid = 13
+    wsUid = 4
 }

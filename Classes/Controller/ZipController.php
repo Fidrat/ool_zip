@@ -14,8 +14,9 @@ namespace OolongMedia\OolZip\Controller;
 
 use TYPO3\CMS\Core\Utility\DebugUtility as D;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-use SvenJuergens\T3Slack\Service\T3Slack;
+//use SvenJuergens\T3Slack\Service\T3Slack;
 
 /**
  * ZipController
@@ -173,9 +174,10 @@ class ZipController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			}
 		}
 		
-		$client = GeneralUtility::makeInstance(T3Slack::class);
-		$client->send( implode(",", $cpCommaList) );			
-		
+//		if( ExtensionManagementUtility::isLoaded('t3_slack') ){
+//			$client = GeneralUtility::makeInstance(T3Slack::class);
+//			$client->send( implode(",", $cpCommaList) );			
+//		}
 		$this->view->assign('cpCommaList', implode(",", $cpCommaList) );
     }
 	

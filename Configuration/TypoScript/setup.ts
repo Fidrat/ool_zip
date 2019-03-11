@@ -71,36 +71,6 @@ plugin.tx_oolzip_wszip.persistence.storagePid = 3
 [END]
 
 
-#tentative pour typo3 8.7
-[PIDinRootline = {$plugin.tx_oolzip_zip.wsUid}]
-
-page >
-page = PAGE
-page{
-    typeNum = 0
-    config{
-       disableAllHeaderCode = 1
-       additionalHeaders = Content-type:application/xml
-       xhtml_cleaning = 0
-       admPanel = 1
-    }
-
-    10 = USER
-    10 { 
-        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-        pluginName    = WsZip
-        extensionName = OolZip
-        vendorName    = OolongMedia
-        #action = webService
-        controller = Zip
-    }
-}
-plugin.tx_oolzip_wszip.persistence.storagePid = 3
-
-[END]
-
-
-
 
 
 # these classes are only used in auto-generated templates
